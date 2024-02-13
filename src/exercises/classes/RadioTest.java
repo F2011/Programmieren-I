@@ -1,6 +1,6 @@
 package exercises.classes;
 
-public class TestRadio {
+public class RadioTest {
     public static void main(String[] args) {
         Radio radio = new Radio(false, 7, 93.5);
         System.out.println(radio);
