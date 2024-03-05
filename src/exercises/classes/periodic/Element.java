@@ -74,10 +74,10 @@ public class Element {
 
     @Override
     public String toString() {
-        return "Element " + name +
+        return name +
                 " (" + symbol +
-                ") ordinal: " + ordinal +
-                ", " + (phase == 1 ? "solid" : (phase == 2 ? "liquid" : "gaseous")) + "at 25°C (298K)" +
+                "), ordinal: " + ordinal +
+                ", " + (phase == 1 ? "solid" : (phase == 2 ? "liquid" : "gaseous")) + " at 25°C (298K)" +
                 ", " + (mainGroup ? "main group" : "side group");
     }
 }
