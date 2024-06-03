@@ -27,3 +27,6 @@ out
 
 # Tests
 test/
+
+# macOS file system
+.DS_Store
