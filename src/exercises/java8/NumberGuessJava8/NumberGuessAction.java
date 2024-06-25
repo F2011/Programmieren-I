@@ -1,10 +1,16 @@
-package exercises.ui.event;
+package exercises.java8.NumberGuessJava8;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
 
 public class NumberGuessAction extends AbstractAction implements ActionListener {
@@ -14,6 +20,8 @@ public class NumberGuessAction extends AbstractAction implements ActionListener 
     private JTextField textFieldOutput;
     private JTextField textFieldPlayerName;
     private JTextField textFieldGuesses;
+
+    private static Path p = Paths.get("scores.txt");
 
     public NumberGuessAction(JTextField textFieldOutput, JTextField textFieldPlayerName, JTextField textFieldGuesses) {
         this.textFieldOutput = textFieldOutput;
@@ -62,40 +70,27 @@ public class NumberGuessAction extends AbstractAction implements ActionListener 
     }
 
     private void writeScore(String name, int score){
-        try (
-                FileWriter bufferedWriter = new FileWriter("scores.txt", true);
-                PrintWriter printWriter = new PrintWriter(bufferedWriter)
-        ) {
+        try {
             if (name.isEmpty()) {
                 System.out.println("Problem with name: " + name);
                 name = "Noname";
             }
-            printWriter.println(score + "/" + name);
+            Files.write(p, (score + "/" + name + "\n").getBytes(), StandardOpenOption.APPEND);
         } catch (IOException ex) {
             System.out.println("Could not write scores.txt" + ex.getMessage());
         }
     }
 
     private Score getHighestScore() {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("scores.txt"))) {
-            ArrayList<Score> scores = new ArrayList<Score>();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] split = line.split("/", 2);
-                try {
-                    scores.add(new Score(Integer.parseInt(split[0]), split[1]));
-                } catch (NumberFormatException | IndexOutOfBoundsException ignored) {
-                }
-            }
-            bufferedReader.close();
-            if (scores.isEmpty()) {return new Score(0, "None");}
-            Score max = new Score(Integer.MAX_VALUE, "");
-            for (Score score : scores) {
-                if (score.getScore() < max.getScore()) {
-                    max = score;
-                }
-            }
-            return max;
+        try {
+            List<String> lines = Files.readAllLines(p);
+            List<Score> scores = lines.stream()
+                    .map(line -> line.split("/", 2))
+                    .filter(line -> line.length == 2)
+                    .map(attributes -> new Score(Integer.parseInt(attributes[0]), attributes[1]))
+                    .toList();
+            var minimum =  scores.stream().min(Comparator.comparingInt(Score::getScore));
+            return (minimum.orElse(new Score(Integer.MAX_VALUE, "")));
         } catch (IOException ex) {
             return new Score(0, "None");
         }

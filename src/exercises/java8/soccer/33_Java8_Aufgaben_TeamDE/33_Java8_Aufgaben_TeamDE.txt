@@ -1,0 +1,23 @@
+30;Ann-Katrin Berger;Tor;09.10.1990;FC Chelsea;6;0
+1;Merle Frohms;Tor;28.01.1995;VfL Wolfsburg;40;0
+12;Stina Johannes;Tor;23.01.2000;Eintracht Frankfurt;0;0
+23;Sara Doorsoun-Khajeh;Abwehr;17.11.1991;Eintracht Frankfurt;45;1
+5;Marina Hegering;Abwehr;17.04.1990;VfL Wolfsburg;29;3
+3;Kathrin Hendrich;Abwehr;06.04.1992;VfL Wolfsburg;58;5
+4;Sophia Kleinherne;Abwehr;12.04.2000;Eintracht Frankfurt;27;1
+24;Sjoeke Nüsken;Abwehr;22.01.2001;Eintracht Frankfurt;17;2
+17;Felicitas Rauch;Abwehr;30.04.1996;VfL Wolfsburg;33;4
+25;Nicole Anyomi;Mittelfeld und Angriff;10.02.2000;Eintracht Frankfurt;16;1
+22;Jule Brand;Mittelfeld und Angriff;16.10.2002;VfL Wolfsburg;32;7
+19;Klara Bühl;Mittelfeld und Angriff;07.12.2000;FC Bayern München;35;14
+13;Sara Däbritz;Mittelfeld und Angriff;15.02.1995;Olympique Lyon;97;17
+10;Laura Freigang;Mittelfeld und Angriff;01.02.1998;Eintracht Frankfurt;20;12
+26;Chantal Hagel;Mittelfeld und Angriff;20.07.1998;TSG 1899 Hoffenheim;10;0
+9;Svenja Huth;Mittelfeld und Angriff;25.01.1991;VfL Wolfsburg;80;14
+14;Lena Lattwein;Mittelfeld und Angriff;02.05.2000;VfL Wolfsburg;29;1
+18;Melanie Leupolz;Mittelfeld und Angriff;14.04.1994;FC Chelsea;78;13
+8;Sydney Lohmann;Mittelfeld und Angriff;19.06.2000;FC Bayern München;22;4
+20;Lina Magull;Mittelfeld und Angriff;15.08.1994;FC Bayern München;72;22
+6;Lena Oberdorf;Mittelfeld und Angriff;19.12.2001;VfL Wolfsburg;38;3
+11;Alexandra Popp ©;Mittelfeld und Angriff;06.04.1991;VfL Wolfsburg;128;62
+7;Lea Schüller;Mittelfeld und Angriff;12.11.1997;FC Bayern München;47;31
