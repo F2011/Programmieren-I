@@ -3,6 +3,7 @@ package exercises.java8.NumberGuessJava8;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.stream.Stream;
 
 public class NumberGuess extends JFrame {
     public static void main(String[] args) {
@@ -59,15 +60,14 @@ public class NumberGuess extends JFrame {
         textFieldOutput.setEditable(false);
 
         NumberGuessAction action = new NumberGuessAction(textFieldOutput, playerNameField, numberInputField);
-        buttonNewGame.addActionListener(action);
-        buttonOK.addActionListener(action);
-        buttonBest.addActionListener(action);
-        buttonExit.addActionListener(action);
-
-        this.add(panelPlayerName);
-        this.add(panelNumberInput);
-        this.add(panelMenuButtons);
-        this.add(textFieldOutput);
+        Stream.of(
+                buttonNewGame, buttonOK, buttonBest, buttonExit
+        ).forEach(
+                button -> button.addActionListener(action)
+        );
+        Stream.of(
+                panelPlayerName, panelNumberInput, panelMenuButtons, textFieldOutput
+        ).forEach(this::add);
 
         this.setVisible(true);
 
